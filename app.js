@@ -98,7 +98,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 function gerarQrCode(dados) {
   return new Promise((resolve, reject) => {
     qrcode.toDataURL(dados, {
-      version: 1,
+      version: 4,
       errorCorrectionLevel: 'L',
       width: 200, // Ajuste o tamanho conforme necessário
       margin: 4,
