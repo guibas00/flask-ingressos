@@ -1,4 +1,0 @@
-qrcode
-Flask
-flasgger
-Flask-CORS
