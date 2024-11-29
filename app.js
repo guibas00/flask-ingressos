@@ -204,7 +204,7 @@ app.post('/validar_ingresso', async (req, res) => {
   try {
     const { cpf, uuidQr } = req.body;
     const uuid = uuidQr
-    console.log(`Validando com o corpo ${req.body}`)
+    console.log(`Validando com o corpo ${JSON.stringify(req.body)}`)
     // Encontra o QR code no banco de dados pelo CPF
     const qrCode = await QRCode.findOne({ cpf, uuid });
 
