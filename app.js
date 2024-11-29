@@ -206,9 +206,9 @@ app.post('/validar_ingresso', async (req, res) => {
     const uuid = uuidQr
     console.log(`Validando com o corpo ${JSON.stringify(req.body)}`)
     // Encontra o QR code no banco de dados pelo CPF
-    const qrCode = await QRCode.findOne({ cpf, uuid });
+    const qrCode = await QRCode.findOne({ cpf });
 
-    if (qrCode) {
+    if (qrCode && qrCode.uuid == uuid) {
       res.json({ status: 'válido', qrCodeData: qrCode.image });
     } else {
       res.status(400).json({ status: 'inválido', message: 'CPF não encontrado' });
