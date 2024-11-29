@@ -203,7 +203,8 @@ app.post('/gerar_ingresso', async (req, res) => {
 app.post('/validar_ingresso', async (req, res) => {
   try {
     const { cpf, uuid } = req.body;
-
+    console.log(cpf)
+    console.log(uuid)
     // Encontra o QR code no banco de dados pelo CPF
     const qrCode = await QRCode.findOne({ cpf, uuid });
 
